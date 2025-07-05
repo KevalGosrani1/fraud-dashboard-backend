@@ -1,0 +1,61 @@
+{
+  "info": {
+    "name": "Fraud Dashboard API",
+    "_postman_id": "b5b6a1be-9f68-4d87-9c3e-aaaa1111aaaa",
+    "description": "API Collection for Fraud Dashboard Project 1 - includes stats analytics routes.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Stats",
+      "description": "Analytics endpoints",
+      "item": [
+        {
+          "name": "Get Stats",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5050/api/stats",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5050",
+              "path": ["api", "stats"],
+              "query": [
+                {
+                  "key": "startDate",
+                  "value": "",
+                  "description": "Optional start date filter (e.g., 2024-01-01)"
+                },
+                {
+                  "key": "endDate",
+                  "value": "",
+                  "description": "Optional end date filter (e.g., 2024-12-31)"
+                },
+                {
+                  "key": "severity",
+                  "value": "",
+                  "description": "Optional severity filter (number)"
+                }
+              ]
+            },
+            "description": "Returns total reports, % high risk, and top wallets."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_token",
+      "value": "demo-token"
+    }
+  ]
+}

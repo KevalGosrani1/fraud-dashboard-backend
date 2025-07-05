@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:5050"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - name: Risk Check
+    flow:
+      - get:
+          url: "/api/risk/0x1234567890abcdef1234567890abcdef12345678"
+  - name: Flag Wallet
+    flow:
+      - post:
+          url: "/api/flag"
+          json:
+            wallet: "0x1234567890abcdef1234567890abcdef12345678"
